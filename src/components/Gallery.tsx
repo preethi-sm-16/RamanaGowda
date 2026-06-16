@@ -1,13 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import styles from "./Gallery.module.css";
 
 interface GalleryItem {
   category: string;
   title: string;
   desc: string;
-  iconSvg: React.ReactNode;
+  imageUrl: string;
+  detailedDesc: string;
 }
 
 const items: GalleryItem[] = [
@@ -15,76 +17,37 @@ const items: GalleryItem[] = [
     category: "Plant Operations",
     title: "SMS Melt Shop Operations",
     desc: "Overseeing primary EAF/EOF furnaces, refining ladles, and continuous billet casters.",
-    iconSvg: (
-      <svg viewBox="0 0 100 100" className={styles.vectorIllustration}>
-        <rect x="25" y="45" width="50" height="35" rx="5" fill="#f1f5f9" stroke="#94a3b8" strokeWidth="2" />
-        <ellipse cx="50" cy="45" rx="20" ry="10" fill="#ffedd5" stroke="#ea580c" strokeWidth="2" />
-        <path d="M40 20 L40 40 M60 20 L60 40" stroke="#475569" strokeWidth="3" strokeLinecap="round" />
-        <path d="M35 60 L65 60 M35 70 L65 70" stroke="#cbd5e1" strokeWidth="2" />
-      </svg>
-    )
+    imageUrl: "/steel_melt_shop.png",
+    detailedDesc: "G K Ramana Gouda directing operational protocols in active steel melting zones, supervising heavy charging, furnace tilting controls, and molten metal pouring sequences across 1.0 MTPA steel production plants. Focuses on minimizing power consumption and optimizing refractory linings.",
   },
   {
     category: "Commissioning Projects",
-    title: "Steel Plant Commissioning",
+    title: "Electric Arc Furnace Commissioning",
     desc: "Engineering plant floor layouts, organizing structural steel erections, and running hot test heats.",
-    iconSvg: (
-      <svg viewBox="0 0 100 100" className={styles.vectorIllustration}>
-        <path d="M15 80 L35 40 L55 80 Z" fill="#f8fafc" stroke="#94a3b8" strokeWidth="2" />
-        <path d="M45 80 L65 30 L85 80 Z" fill="#ffedd5" stroke="#ea580c" strokeWidth="2" />
-        <line x1="10" y1="80" x2="90" y2="80" stroke="#475569" strokeWidth="3" />
-        <circle cx="35" cy="40" r="4" fill="#64748b" />
-        <circle cx="65" cy="30" r="4" fill="#ea580c" />
-      </svg>
-    )
+    imageUrl: "/furnace_commissioning.png",
+    detailedDesc: "Hands-on engineering and hot commissioning trials of steel melt shop equipment. Includes supervising electric arc furnace configurations, testing hydraulic tilting systems, and coordinating safety inspection walk-throughs prior to full-scale operations.",
   },
   {
-    category: "Site Visits",
-    title: "Project Inspections & Reviews",
+    category: "Quality & Controls",
+    title: "Metallurgical Testing & Review",
     desc: "Reviewing furnace refractory lifespans, checking gas piping networks, and leading safety walks.",
-    iconSvg: (
-      <svg viewBox="0 0 100 100" className={styles.vectorIllustration}>
-        <circle cx="50" cy="50" r="30" fill="#f8fafc" stroke="#94a3b8" strokeWidth="2" />
-        <circle cx="50" cy="50" r="12" fill="#ffedd5" stroke="#ea580c" strokeWidth="2" />
-        <line x1="50" y1="10" x2="50" y2="30" stroke="#475569" strokeWidth="2" />
-        <line x1="50" y1="70" x2="50" y2="90" stroke="#475569" strokeWidth="2" />
-        <line x1="10" y1="50" x2="30" y2="50" stroke="#475569" strokeWidth="2" />
-        <line x1="70" y1="50" x2="90" y2="50" stroke="#475569" strokeWidth="2" />
-      </svg>
-    )
+    imageUrl: "/quality_testing.png",
+    detailedDesc: "Collaborating with lab technicians to verify chemistry controls, steel purity standards, and slag composition. Optimizing vacuum degassing (VD) and argon oxygen decarburization (AOD) refining parameters for special alloy steel grades.",
   },
   {
-    category: "Team Activities",
+    category: "Team & Safety",
     title: "Melt Shop Safety Training",
     desc: "Coordinating shift toolboxes, training technicians, and leading Kaizen optimization teams.",
-    iconSvg: (
-      <svg viewBox="0 0 100 100" className={styles.vectorIllustration}>
-        <circle cx="50" cy="35" r="12" fill="#ffedd5" stroke="#ea580c" strokeWidth="2" />
-        <path d="M30 75 C30 55 70 55 70 75" fill="#f8fafc" stroke="#94a3b8" strokeWidth="2" />
-        <circle cx="25" cy="45" r="8" fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="2" />
-        <circle cx="75" cy="45" r="8" fill="#f1f5f9" stroke="#cbd5e1" strokeWidth="2" />
-      </svg>
-    )
-  },
-  {
-    category: "Industry Events",
-    title: "Metallurgy Conferences",
-    desc: "Presenting kaizen results, discussing alloy steel specifications, and sharing EHS guidelines.",
-    iconSvg: (
-      <svg viewBox="0 0 100 100" className={styles.vectorIllustration}>
-        <rect x="20" y="25" width="60" height="40" rx="3" fill="#f8fafc" stroke="#94a3b8" strokeWidth="2" />
-        <line x1="50" y1="65" x2="50" y2="85" stroke="#475569" strokeWidth="3" />
-        <line x1="30" y1="85" x2="70" y2="85" stroke="#475569" strokeWidth="3" />
-        <path d="M35 45 L45 35 L55 45 M45 35 L45 55" stroke="#ea580c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    )
+    imageUrl: "/team_safety.png",
+    detailedDesc: "Directing safety training drills and operational briefings with shift engineers. Fostering a zero-harm incident culture and supervising the implementation of 5S and Kaizen on the steel melt shop floor.",
   }
 ];
 
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState<string>("All");
+  const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
 
-  const categories = ["All", "Plant Operations", "Commissioning Projects", "Site Visits", "Team Activities", "Industry Events"];
+  const categories = ["All", "Plant Operations", "Commissioning Projects", "Quality & Controls", "Team & Safety"];
 
   const filteredItems = activeTab === "All" 
     ? items 
@@ -97,7 +60,7 @@ export default function Gallery() {
           <span className={styles.subtitle}>Media Showcase</span>
           <h2 className={styles.title}>Gallery</h2>
           <p className={styles.headerDesc}>
-            Stylized vector layouts representing operational segments, project trial sites, and leadership conferences.
+            Explore operational zones, trial sites, and leadership conferences. Click on any card to view detailed descriptions and high-resolution visuals.
           </p>
         </div>
 
@@ -117,9 +80,19 @@ export default function Gallery() {
         {/* Gallery Items Grid */}
         <div className={styles.grid}>
           {filteredItems.map((item, idx) => (
-            <div key={idx} className={styles.galleryCard}>
-              <div className={styles.illustrationWrapper}>
-                {item.iconSvg}
+            <div 
+              key={idx} 
+              className={styles.galleryCard}
+              onClick={() => setSelectedItem(item)}
+            >
+              <div className={styles.imageWrapper}>
+                <Image 
+                  src={item.imageUrl} 
+                  alt={item.title} 
+                  width={600}
+                  height={400}
+                  className={styles.cardImage}
+                />
               </div>
               <div className={styles.cardInfo}>
                 <span className={styles.cardCat}>{item.category}</span>
@@ -130,6 +103,43 @@ export default function Gallery() {
           ))}
         </div>
       </div>
+
+      {/* Interactive Lightbox/Modal Overlay */}
+      {selectedItem && (
+        <div 
+          className={styles.modalOverlay} 
+          onClick={() => setSelectedItem(null)}
+        >
+          <div 
+            className={styles.modalContent} 
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button 
+              className={styles.closeBtn} 
+              onClick={() => setSelectedItem(null)}
+              aria-label="Close Gallery Modal"
+            >
+              &times;
+            </button>
+            <div className={styles.modalGrid}>
+              <div className={styles.modalImageWrapper}>
+                <Image 
+                  src={selectedItem.imageUrl} 
+                  alt={selectedItem.title} 
+                  width={800}
+                  height={600}
+                  className={styles.modalImage}
+                />
+              </div>
+              <div className={styles.modalInfo}>
+                <span className={styles.modalCat}>{selectedItem.category}</span>
+                <h3 className={styles.modalTitle}>{selectedItem.title}</h3>
+                <p className={styles.modalDetailedDesc}>{selectedItem.detailedDesc}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

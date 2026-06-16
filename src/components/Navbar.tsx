@@ -1,23 +1,22 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import styles from "./Navbar.module.css";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Journey", href: "#journey" },
-  { label: "What I Do", href: "#what-do" },
-  { label: "Highlights", href: "#highlights" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Experience", href: "/experience" },
+  { label: "Skills & Process", href: "/skills" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,51 +24,21 @@ export default function Navbar() {
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       if (totalScroll > 0) {
         setScrollProgress((window.scrollY / totalScroll) * 100);
+      } else {
+        setScrollProgress(0);
       }
 
       // Check if scrolled past threshold for styling
       setIsScrolled(window.scrollY > 50);
-
-      // Determine active section based on scroll position
-      const sections = navLinks.map(link => link.href.substring(1));
-      let currentSection = "home";
-
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          // If the section top is above or near the middle of the viewport
-          if (rect.top <= 120 && rect.bottom >= 120) {
-            currentSection = section;
-            break;
-          }
-        }
-      }
-      setActiveSection(currentSection);
     };
 
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Initial call
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+  const handleLinkClick = () => {
     setMobileMenuOpen(false);
-    const targetId = href.substring(1);
-    const el = document.getElementById(targetId);
-    if (el) {
-      const offset = 80; // height of floating navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = el.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
   };
 
   return (
@@ -82,33 +51,31 @@ export default function Navbar() {
       
       <div className={styles.navContainer}>
         <div className={styles.logo}>
-          <a href="#home" onClick={(e) => handleLinkClick(e, "#home")}>
+          <Link href="/" onClick={handleLinkClick}>
             <span className={styles.logoText}>G K R</span>
             <span className={styles.logoSubtext}>GOUDA</span>
-          </a>
+          </Link>
         </div>
 
         {/* Desktop Navigation */}
         <nav className={styles.navDesktop}>
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className={`${styles.navLink} ${
-                activeSection === link.href.substring(1) ? styles.active : ""
+                pathname === link.href ? styles.active : ""
               }`}
-              onClick={(e) => handleLinkClick(e, link.href)}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a 
-            href="#contact" 
+          <Link 
+            href="/contact" 
             className={styles.ctaButton}
-            onClick={(e) => handleLinkClick(e, "#contact")}
           >
             Connect
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Menu Toggle Button */}
@@ -127,24 +94,24 @@ export default function Navbar() {
       <div className={`${styles.navMobile} ${mobileMenuOpen ? styles.mobileOpen : ""}`}>
         <nav className={styles.mobileLinks}>
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className={`${styles.mobileNavLink} ${
-                activeSection === link.href.substring(1) ? styles.active : ""
+                pathname === link.href ? styles.active : ""
               }`}
-              onClick={(e) => handleLinkClick(e, link.href)}
+              onClick={handleLinkClick}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a 
-            href="#contact" 
+          <Link 
+            href="/contact" 
             className={styles.mobileCtaButton}
-            onClick={(e) => handleLinkClick(e, "#contact")}
+            onClick={handleLinkClick}
           >
             Connect Now
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

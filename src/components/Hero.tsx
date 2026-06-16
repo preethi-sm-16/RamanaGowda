@@ -2,26 +2,10 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Hero.module.css";
 
 export default function Hero() {
-  const handleScrollTo = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const el = document.getElementById(targetId);
-    if (el) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = el.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
-
   return (
     <section id="home" className={styles.heroSection}>
       <div className={styles.container}>
@@ -36,9 +20,9 @@ export default function Hero() {
             </p>
             
             <div className={styles.ctaGroup}>
-              <button onClick={(e) => handleScrollTo(e, "journey")} className={styles.primaryBtn}>
+              <Link href="/experience" className={styles.primaryBtn}>
                 View Journey
-              </button>
+              </Link>
               <a 
                 href="/G K RAMANAGOUDA.pdf" 
                 download="G_K_Ramana_Gouda_Resume.pdf"
@@ -46,13 +30,12 @@ export default function Hero() {
               >
                 Download Resume
               </a>
-              <a 
-                href="#contact" 
-                onClick={(e) => handleScrollTo(e, "contact")}
+              <Link 
+                href="/contact" 
                 className={styles.tertiaryBtn}
               >
                 Contact Me
-              </a>
+              </Link>
             </div>
           </div>
 
