@@ -1,0 +1,124 @@
+.highlightsSection {
+  background-color: var(--color-bg-base);
+  padding: 100px 0;
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.subtitle {
+  font-family: var(--font-family-headings);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.headerDesc {
+  color: var(--color-steel-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* 5-Column Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+
+.highlightBlock {
+  border-top: 3px solid var(--color-steel-border);
+  padding: 1.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  transition: var(--transition-smooth);
+}
+
+.highlightBlock:hover {
+  border-top-color: var(--color-orange-primary);
+  transform: translateY(-2px);
+}
+
+.numberRow {
+  display: flex;
+  align-items: baseline;
+  line-height: 1.1;
+  flex-wrap: wrap;
+}
+
+.numberVal {
+  font-family: var(--font-family-headings);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 900;
+  color: var(--color-steel-light);
+  letter-spacing: -0.04em;
+  transition: var(--transition-fast);
+}
+
+.highlightBlock:hover .numberVal {
+  color: var(--color-orange-primary);
+}
+
+.numberSuffix {
+  font-family: var(--font-family-headings);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-orange-primary);
+  margin-left: 2px;
+}
+
+.numberLabel {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-steel-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  
+  .highlightBlock {
+    padding: 1rem 0;
+    align-items: center;
+    text-align: center;
+    border-top-width: 2px;
+  }
+}

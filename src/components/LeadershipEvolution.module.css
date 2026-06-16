@@ -1,0 +1,185 @@
+.evolutionSection {
+  padding: 100px 0;
+  background-color: var(--color-bg-surface);
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+}
+
+.subtitle {
+  font-family: var(--font-family-headings);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.headerDesc {
+  color: var(--color-steel-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* Steps Layout Grid */
+.graphWrapper {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.stepsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.stepCard {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-steel-border);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  position: relative;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.stepCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-steel-border);
+  transition: var(--transition-smooth);
+}
+
+/* Hover effects */
+.stepCard:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 106, 0, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 106, 0, 0.06);
+}
+
+.stepCard:hover::before {
+  background: linear-gradient(90deg, var(--color-orange-primary), var(--color-yellow-accent));
+}
+
+.stepActive {
+  border-color: var(--color-orange-primary);
+  box-shadow: 0 15px 35px rgba(255, 106, 0, 0.08);
+}
+
+.stepHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stepSpan {
+  font-family: var(--font-family-headings);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+/* Authority Progress Bar */
+.scopeScaleBar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.scopeBarLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-steel-muted);
+  letter-spacing: 0.05em;
+}
+
+.barTrack {
+  height: 6px;
+  background-color: var(--color-steel-dark);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-orange-primary), var(--color-yellow-accent));
+  border-radius: 10px;
+  transition: width 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.stepDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border-top: 1px solid rgba(44, 49, 64, 0.4);
+  padding-top: 1rem;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+}
+
+.detailLabel {
+  color: var(--color-steel-muted);
+}
+
+.detailValue {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.detailValueHighlight {
+  color: var(--color-yellow-accent);
+  font-weight: 600;
+}
+
+.stepDesc {
+  font-size: 0.88rem;
+  color: var(--color-steel-muted);
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Layouts */
+@media (max-width: 992px) {
+  .stepsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stepsContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

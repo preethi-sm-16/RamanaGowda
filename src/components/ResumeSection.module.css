@@ -1,0 +1,234 @@
+.resumeSection {
+  background-color: var(--color-bg-surface);
+  padding: 100px 0;
+  border-top: 1px solid var(--color-steel-border);
+  border-bottom: 1px solid var(--color-steel-border);
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.subtitle {
+  font-family: var(--font-family-headings);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.headerDesc {
+  color: var(--color-steel-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Resume Card Preview */
+.resumeCard {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-steel-border);
+  border-radius: var(--border-radius-lg);
+  padding: 3.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-steel-border);
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.nameBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.name {
+  font-family: var(--font-family-headings);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-steel-light);
+}
+
+.titleText {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-orange-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.actionBlock {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: var(--color-steel-light);
+  color: #ffffff;
+  font-family: var(--font-family-headings);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--border-radius-sm);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  transition: var(--transition-smooth);
+}
+
+.downloadBtn:hover {
+  background-color: var(--color-orange-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 15px rgba(234, 88, 12, 0.2);
+}
+
+.downloadBtn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.printBtn {
+  border: 1px solid var(--color-steel-border);
+  color: var(--color-steel-light);
+  font-family: var(--font-family-headings);
+  font-weight: 700;
+  font-size: 0.88rem;
+  padding: 0.8rem 1.6rem;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  background-color: transparent;
+  transition: var(--transition-smooth);
+}
+
+.printBtn:hover {
+  border-color: var(--color-steel-light);
+  background-color: var(--color-bg-surface);
+}
+
+/* Resume Body Columns */
+.cardBody {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.colTitle {
+  font-family: var(--font-family-headings);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--color-steel-light);
+  border-bottom: 2px solid var(--color-steel-border);
+  padding-bottom: 0.5rem;
+}
+
+.educationItem {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 1rem;
+}
+
+.eduYear {
+  font-family: var(--font-family-headings);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+}
+
+.eduDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.eduDegree {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-steel-light);
+}
+
+.eduInst {
+  font-size: 0.85rem;
+  color: var(--color-steel-muted);
+}
+
+.orgList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.orgList li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.92rem;
+  color: var(--color-steel-muted);
+  line-height: 1.5;
+}
+
+.orgList li::before {
+  content: '▪';
+  position: absolute;
+  left: 0;
+  top: -0.1rem;
+  color: var(--color-orange-primary);
+  font-size: 1.1rem;
+}
+
+.orgList li strong {
+  color: var(--color-steel-light);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .cardBody {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .resumeCard {
+    padding: 2rem;
+  }
+  
+  .actionBlock {
+    width: 100%;
+  }
+  
+  .downloadBtn, .printBtn {
+    flex-grow: 1;
+    text-align: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,167 @@
+.journeySection {
+  padding: 100px 0;
+  background-color: var(--color-bg-base);
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.subtitle {
+  font-family: var(--font-family-headings);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.headerDesc {
+  color: var(--color-steel-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Portfolio Cards Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.journeyCard {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-steel-border);
+  border-radius: var(--border-radius-lg);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.02);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.journeyCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 4px;
+  background-color: var(--color-steel-border);
+  border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+  transition: var(--transition-smooth);
+}
+
+/* Hover effects */
+.journeyCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-steel-border);
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.05);
+}
+
+.journeyCard:hover::before {
+  background-color: var(--color-orange-primary);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.cardSpan {
+  font-family: var(--font-family-headings);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+}
+
+.cardIndex {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-steel-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cardCompany {
+  font-family: var(--font-family-headings);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-steel-light);
+  line-height: 1.2;
+}
+
+.cardRole {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-steel-muted);
+}
+
+.cardStory {
+  font-size: 0.92rem;
+  color: var(--color-steel-muted);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+/* Metric badge row */
+.metricBadgeRow {
+  display: flex;
+  margin-top: auto;
+}
+
+.metricBadge {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-steel-border);
+  padding: 0.35rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-steel-light);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.badgeIndicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-orange-primary);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .journeyCard {
+    padding: 1.8rem;
+  }
+  
+  .cardCompany {
+    font-size: 1.2rem;
+  }
+}

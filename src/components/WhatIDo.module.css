@@ -1,0 +1,121 @@
+.whatSection {
+  background-color: var(--color-bg-surface);
+  padding: 100px 0;
+  border-top: 1px solid var(--color-steel-border);
+  border-bottom: 1px solid var(--color-steel-border);
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.subtitle {
+  font-family: var(--font-family-headings);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.headerDesc {
+  color: var(--color-steel-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.focusCard {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-steel-border);
+  border-radius: var(--border-radius-lg);
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.02);
+  transition: var(--transition-smooth);
+}
+
+.focusCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-orange-primary);
+  box-shadow: 0 15px 30px rgba(234, 88, 12, 0.05);
+}
+
+.iconWrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-steel-dark);
+  border: 1px solid var(--color-steel-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-orange-primary);
+  transition: var(--transition-smooth);
+}
+
+.focusCard:hover .iconWrapper {
+  background-color: var(--color-orange-primary);
+  border-color: var(--color-orange-primary);
+  color: #ffffff;
+}
+
+.iconWrapper svg {
+  width: 20px;
+  height: 20px;
+}
+
+.focusTitle {
+  font-family: var(--font-family-headings);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--color-steel-light);
+  line-height: 1.3;
+}
+
+.focusDesc {
+  font-size: 0.88rem;
+  color: var(--color-steel-muted);
+  line-height: 1.6;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .focusCard {
+    padding: 1.8rem;
+  }
+}

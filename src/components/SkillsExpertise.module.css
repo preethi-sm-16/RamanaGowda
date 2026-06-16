@@ -1,0 +1,126 @@
+.skillsSection {
+  background-color: var(--color-bg-base);
+  padding: 100px 0;
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+  max-width: 800px;
+}
+
+.subtitle {
+  font-family: var(--font-family-headings);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  margin-bottom: 1rem;
+}
+
+.headerDesc {
+  color: var(--color-steel-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Two-column layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.colHeader {
+  font-family: var(--font-family-headings);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-steel-light);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-steel-border);
+}
+
+.colIndex {
+  font-family: var(--font-family-headings);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-orange-primary);
+  background-color: rgba(234, 88, 12, 0.08);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skillTag {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-steel-border);
+  color: var(--color-steel-light);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+  transition: var(--transition-smooth);
+}
+
+.skillTag:hover {
+  border-color: var(--color-steel-light);
+  background-color: var(--color-steel-light);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.techTag {
+  background-color: #ffffff;
+  border: 1px solid var(--color-orange-primary);
+  color: var(--color-orange-primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+  transition: var(--transition-smooth);
+}
+
+.techTag:hover {
+  background-color: var(--color-orange-primary);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.15);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
