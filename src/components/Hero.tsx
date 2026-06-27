@@ -20,18 +20,6 @@ export default function Hero() {
               <div className={styles.experienceLine}>28+ Years of Experience &bull; Iron Making &bull; Steel Making &bull; Rolling &bull; Special Alloy Steels</div>
             </div>
 
-            <div className={styles.targetRolesContainer}>
-              <span className={styles.targetLabel}>Target CXO Roles:</span>
-              <div className={styles.rolesGrid}>
-                <span className={styles.rolePill}>Plant Head</span>
-                <span className={styles.rolePill}>Chief Operating Officer (COO)</span>
-                <span className={styles.rolePill}>Executive Director - Operations</span>
-                <span className={styles.rolePill}>VP - Integrated Operations</span>
-                <span className={styles.rolePill}>Business Head</span>
-                <span className={styles.rolePill}>Technical Director</span>
-              </div>
-            </div>
-
             <p className={styles.subheading}>
               Driving operational excellence and business transformation across the complete steel manufacturing value chain. Seasoned in scaling operations from 0.2 MTPA to 1.0 MTPA, greenfield facilities commissioning, productivity gains, and cost-leadership.
             </p>
@@ -53,6 +41,18 @@ export default function Hero() {
               >
                 Contact Me
               </Link>
+            </div>
+
+            <div className={styles.targetRolesContainer}>
+              <span className={styles.targetLabel}>Target CXO Roles:</span>
+              <div className={styles.rolesGrid}>
+                <span className={styles.rolePill}>Plant Head</span>
+                <span className={styles.rolePill}>Chief Operating Officer (COO)</span>
+                <span className={styles.rolePill}>Executive Director - Operations</span>
+                <span className={styles.rolePill}>VP - Integrated Operations</span>
+                <span className={styles.rolePill}>Business Head</span>
+                <span className={styles.rolePill}>Technical Director</span>
+              </div>
             </div>
           </div>
 
