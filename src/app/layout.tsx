@@ -15,8 +15,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "G K Ramana Gouda | Executive Steel Melt Shop (SMS) Leader",
-  description: "Executive portfolio of G K Ramana Gouda, showcasing 25+ years of steel industry leadership, plant commissioning projects, production achievements, and SMS operations management.",
+  title: "G K Ramana Gouda | Integrated Steel Plant Operations Leader | Plant Head",
+  description: "Executive portfolio of G K Ramana Gouda, showcasing 28+ years of integrated steel industry leadership, plant operations, commissioning projects, production achievements, and business transformation.",
 };
 
 export default function RootLayout({

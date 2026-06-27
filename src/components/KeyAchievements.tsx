@@ -13,7 +13,7 @@ interface AchievementCard {
 const achievements: AchievementCard[] = [
   {
     title: "Production Excellence",
-    desc: "Achieved record production levels exceeding 44,500 MT per month. Directing operations, scheduling, and furnace maintenance strategies at Sunflag SMS plant.",
+    desc: "Achieved record production levels exceeding 44,500 MT per month. Directing operations, scheduling, raw materials mix, and furnace maintenance strategies at Sunflag's integrated special steels division.",
     metric: "44,500+ MT",
     icon: (
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -42,9 +42,9 @@ const achievements: AchievementCard[] = [
     )
   },
   {
-    title: "Quality Improvement",
-    desc: "Developed systems focused on consistent steel quality. Engineered processes to hit ultra-low Phosphorus levels (< 0.010%) and managed ISO TS16949 automotive steel requirements.",
-    metric: "ISO Certified",
+    title: "Special Alloy Quality",
+    desc: "Engineered strict process parameters to manufacture high-grade bearing steels (SAE 52100), automotive forging grades (16MnCr5, 20MnCr5), spring steels, and high carbon long products.",
+    metric: "Alloy Steel",
     icon: (
       <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />

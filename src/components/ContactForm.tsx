@@ -76,7 +76,7 @@ export default function ContactForm() {
               </div>
               <div className={styles.profileText}>
                 <h3 className={styles.infoTitle}>G K Ramana Gouda</h3>
-                <p className={styles.infoSub}>Steel Melt Shop Operations Leader</p>
+                <p className={styles.infoSub}>Integrated Steel Plant Operations Leader | Plant Head</p>
               </div>
             </div>
             

@@ -6,7 +6,7 @@ const teaserCards = [
   {
     icon: "👤",
     title: "Executive Biography",
-    desc: "Discover my 25+ years journey from Hospet Steels Executive to Head of Steel Melt Shop, NITK metallurgical research roots, and education credentials.",
+    desc: "Discover my 28+ years journey from Hospet Steels Executive to Integrated Steel Operations Leader & Plant Head, NITK metallurgy research roots, and education credentials.",
     href: "/about",
     cta: "Read Biography",
   },

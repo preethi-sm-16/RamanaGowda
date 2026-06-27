@@ -15,10 +15,10 @@ interface GalleryItem {
 const items: GalleryItem[] = [
   {
     category: "Plant Operations",
-    title: "SMS Melt Shop Operations",
-    desc: "Overseeing primary EAF/EOF furnaces, refining ladles, and continuous billet casters.",
+    title: "Integrated Steel Operations",
+    desc: "Overseeing sinter plant, blast furnace, steelmaking furnaces, and continuous casting lines.",
     imageUrl: "/steel_melt_shop.png",
-    detailedDesc: "G K Ramana Gouda directing operational protocols in active steel melting zones, supervising heavy charging, furnace tilting controls, and molten metal pouring sequences across 1.0 MTPA steel production plants. Focuses on minimizing power consumption and optimizing refractory linings.",
+    detailedDesc: "G K Ramana Gouda directing operational protocols across integrated plant zones, supervising raw material charge mixes, blast furnace runs, steel melting/refining, and rolling mill outputs. Focuses on productivity, quality standards, and energy optimization.",
   },
   {
     category: "Commissioning Projects",
@@ -36,10 +36,10 @@ const items: GalleryItem[] = [
   },
   {
     category: "Team & Safety",
-    title: "Melt Shop Safety Training",
+    title: "Integrated Plant Safety Training",
     desc: "Coordinating shift toolboxes, training technicians, and leading Kaizen optimization teams.",
     imageUrl: "/team_safety.png",
-    detailedDesc: "Directing safety training drills and operational briefings with shift engineers. Fostering a zero-harm incident culture and supervising the implementation of 5S and Kaizen on the steel melt shop floor.",
+    detailedDesc: "Directing safety training drills and operational briefings with shift engineers. Fostering a zero-harm incident culture and supervising the implementation of 5S and Kaizen on the integrated steel plant floor.",
   }
 ];
 

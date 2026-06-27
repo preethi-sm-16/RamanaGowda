@@ -134,3 +134,64 @@
     padding: 1.8rem;
   }
 }
+
+.cxoSection {
+  margin-top: 5rem;
+  border-top: 1px solid var(--color-steel-border);
+  padding-top: 4rem;
+  width: 100%;
+}
+
+.cxoTitle {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-steel-light);
+}
+
+.cxoSub {
+  font-size: 1.05rem;
+  color: var(--color-steel-muted);
+  margin-bottom: 2.5rem;
+}
+
+.cxoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.cxoCard {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-steel-border);
+  border-radius: var(--border-radius-md);
+  padding: 1.75rem;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.01);
+}
+
+.cxoCard:hover {
+  border-color: var(--color-orange-primary);
+  box-shadow: 0 10px 25px rgba(234, 88, 12, 0.05);
+  transform: translateY(-2px);
+}
+
+.cxoIcon {
+  font-size: 1.8rem;
+  margin-bottom: 0.25rem;
+}
+
+.cxoRole {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-steel-light);
+  line-height: 1.3;
+}
+
+.cxoDesc {
+  font-size: 0.9rem;
+  color: var(--color-steel-muted);
+  font-weight: 500;
+}

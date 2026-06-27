@@ -81,7 +81,7 @@ export default function Highlights() {
         </div>
 
         <div className={styles.grid}>
-          <HighlightCounter end={25} suffix="+" label="Years of Industry Experience" />
+          <HighlightCounter end={28} suffix="+" label="Years of Integrated Experience" />
           <HighlightCounter end={44500} suffix="+" label="MT Monthly Production" />
           <HighlightCounter end={42} suffix="" label="Heats Per Day Record" />
           
@@ -94,9 +94,9 @@ export default function Highlights() {
 
           <div className={styles.highlightBlock}>
             <div className={styles.numberRow}>
-              <span className={styles.numberVal}>Head SMS</span>
+              <span className={styles.numberVal}>Plant Head</span>
             </div>
-            <div className={styles.numberLabel}>Current Position at Sunflag</div>
+            <div className={styles.numberLabel}>Target Executive Level Role</div>
           </div>
         </div>
       </div>

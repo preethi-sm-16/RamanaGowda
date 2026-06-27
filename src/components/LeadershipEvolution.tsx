@@ -73,7 +73,7 @@ export default function LeadershipEvolution() {
           <span className={styles.subtitle}>Progression</span>
           <h2 className={styles.title}>From Executive To Industry Leader</h2>
           <p className={styles.headerDesc}>
-            A visualization of G K Ramana Gouda&apos;s climbing operational scope, from shift-level supervision to site-wide executive governance.
+            A visualization of G K Ramana Gouda&apos;s climbing operational scope, from shift-level supervision to site-wide integrated plant governance.
           </p>
         </div>
 

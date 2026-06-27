@@ -15,8 +15,25 @@ export default function Hero() {
             <span className={styles.greeting}>Hello, I&apos;m</span>
             <h1 className={styles.title}>G K Ramana Gouda</h1>
             
+            <div className={styles.taglineBlock}>
+              <div className={styles.mainRole}>Integrated Steel Plant Operations Leader | Plant Head</div>
+              <div className={styles.experienceLine}>28+ Years of Experience &bull; Iron Making &bull; Steel Making &bull; Rolling &bull; Special Alloy Steels</div>
+            </div>
+
+            <div className={styles.targetRolesContainer}>
+              <span className={styles.targetLabel}>Target CXO Roles:</span>
+              <div className={styles.rolesGrid}>
+                <span className={styles.rolePill}>Plant Head</span>
+                <span className={styles.rolePill}>Chief Operating Officer (COO)</span>
+                <span className={styles.rolePill}>Executive Director - Operations</span>
+                <span className={styles.rolePill}>VP - Integrated Operations</span>
+                <span className={styles.rolePill}>Business Head</span>
+                <span className={styles.rolePill}>Technical Director</span>
+              </div>
+            </div>
+
             <p className={styles.subheading}>
-              Steel Industry Professional with <strong>25+ Years of Experience</strong> in Steel Melt Shop Operations, Plant Commissioning and Leadership.
+              Driving operational excellence and business transformation across the complete steel manufacturing value chain. Seasoned in scaling operations from 0.2 MTPA to 1.0 MTPA, greenfield facilities commissioning, productivity gains, and cost-leadership.
             </p>
             
             <div className={styles.ctaGroup}>

@@ -78,7 +78,7 @@ export default function CareerJourney() {
           <span className={styles.subtitle}>Timeline</span>
           <h2 className={styles.title}>Career Journey</h2>
           <p className={styles.headerDesc}>
-            A structured chronicle of G K Ramana Gouda&apos;s professional progression, representing 25+ years of leadership and plant engineering success.
+            A structured chronicle of G K Ramana Gouda&apos;s professional progression, representing 28+ years of leadership and plant engineering success.
           </p>
         </div>
 

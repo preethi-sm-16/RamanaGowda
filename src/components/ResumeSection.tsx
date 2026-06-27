@@ -24,7 +24,7 @@ export default function ResumeSection() {
           <div className={styles.cardHeader}>
             <div className={styles.nameBlock}>
               <h3 className={styles.name}>G K Ramana Gouda</h3>
-              <span className={styles.titleText}>Head SMS / Metallurgical Executive</span>
+              <span className={styles.titleText}>Integrated Steel Plant Operations Leader | Plant Head</span>
             </div>
             <div className={styles.actionBlock}>
               <a 

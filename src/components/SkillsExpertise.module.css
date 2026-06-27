@@ -124,3 +124,70 @@
     gap: 3rem;
   }
 }
+
+.capabilitiesSection {
+  margin-top: 5rem;
+  border-top: 1px solid var(--color-steel-border);
+  padding-top: 4rem;
+}
+
+.capabilitiesHeader {
+  font-family: var(--font-family-headings);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-steel-light);
+  margin-bottom: 2.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.capabilityCard {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-steel-border);
+  border-radius: var(--border-radius-md);
+  padding: 2rem;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.01);
+}
+
+.capabilityCard:hover {
+  border-color: var(--color-orange-primary);
+  box-shadow: 0 10px 25px rgba(234, 88, 12, 0.05);
+  transform: translateY(-2px);
+}
+
+.capabilityTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-steel-light);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1.5px solid var(--color-orange-glow-strong);
+}
+
+.capabilityList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.capabilityItem {
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--color-steel-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.bullet {
+  color: var(--color-orange-primary);
+  font-weight: bold;
+}

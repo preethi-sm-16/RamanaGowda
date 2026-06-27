@@ -39,8 +39,70 @@
   font-weight: 900;
   color: var(--color-steel-light);
   line-height: 1.1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.03em;
+}
+
+.taglineBlock {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.mainRole {
+  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
+  font-weight: 800;
+  color: var(--color-orange-primary);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.experienceLine {
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  color: var(--color-steel-light);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.targetRolesContainer {
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.targetLabel {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-steel-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.rolesGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.rolePill {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-steel-light);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-steel-border);
+  padding: 0.35rem 0.85rem;
+  border-radius: 50px;
+  transition: var(--transition-smooth);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.rolePill:hover {
+  border-color: var(--color-orange-primary);
+  color: var(--color-orange-primary);
+  box-shadow: 0 4px 10px rgba(234, 88, 12, 0.08);
+  transform: translateY(-1px);
 }
 
 .subheading {
